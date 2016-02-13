@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>MobileMayhem</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui, target-densitydpi=device-dpi">
+  <meta http-equiv="cleartype" content="on">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#4CAF50">
+
+  <style>
+    @font-face {
+      font-family: PressStart;
+      src: url(assets/fonts/PressStart2P.ttf);
+    }
+    body {
+      margin: 0 0 0px 0;
+      background: #333;
+      overflow: hidden;
+    }
+  </style>
+
+  <!--<script src="http://jsconsole.com/remote.js?20409BC7-3F6E-4412-83CC-4C90863F5EA5"></script>-->
+
+  <script src="https://cdn.firebase.com/js/client/2.2.7/firebase.js"></script>
+  <script src="lib/phaser_2.4.4.min.js"></script>
+  <script src="lib/cocoon.min.js"></script>
+
+  <script src="plugins/firebasePlugin.js"></script>
+  <script src="plugins/networkPlugin.js"></script>
+  <script src="plugins/textboxPlugin.js"></script>
+  <script src="plugins/buttonPlugin.js"></script>
+
+  <script src="states/boot.js"></script>
+  <script src="states/preloader.js"></script>
+  <script src="states/mainMenu.js"></script>
+  <script src="states/loginMenu.js"></script>
+  <script src="states/createRoom.js"></script>
+  <script src="states/singlePlayer.js"></script>
+
+
+  <script src="states/minis/clickTap.js"></script>
+  <script src="states/minis/spriteShoot.js"></script>
+  <script src="states/app.js"></script>
+
+</head>
+<body>
+
+<div id="gameContainer"></div>
+
+</html>
