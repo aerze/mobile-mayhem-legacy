@@ -183,11 +183,11 @@ ClickTap.prototype = {
         this.gameOverText.anchor.setTo(0.5, 0);
 
         this.endText = this.add.text(this.game.width, this.game.height,
-        'Main Menu', this.presetFont(72));
+        'Back', this.presetFont(72));
         this.endText.anchor.setTo(1, 1);
         this.endText.inputEnabled = true;
         this.endText.events.onInputUp.add(function () {
-            this.state.start('Menu_MainMenu');
+            this.state.start('Menu_SinglePlayer');
         }, this);
 
         this.restartText = this.add.text(0, this.game.height,

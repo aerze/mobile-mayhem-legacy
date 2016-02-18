@@ -40,8 +40,7 @@ Preload.prototype = {
 
         // Load the rest of the assets
         this.load.image('logo', 'assets/logo.png');
-        this.load.spritesheet('menuButtons', 'assets/menu-buttons-116-15-131.png', 651, 126);
-        this.load.spritesheet('blueButton', 'assets/blue_button_123.png', 580, 123);
+        this.load.spritesheet('blueButton', 'assets/menu/blue_button_123.png', 580, 123);
         this.load.image('button', 'assets/menu/button_background.png');
 
         // ClickyTap
