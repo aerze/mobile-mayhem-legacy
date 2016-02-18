@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "dev": "node_modules/webpack/bin/webpack.js",
-    "dev-watch": "node_modules/webpack/bin/webpack.js -w",
+    "dev": "node_modules/.bin/webpack",
+    "dev-watch": "node_modules/.bin/webpack -w",
     "build": "npm run dev && npm start"
   },
   "repository": {

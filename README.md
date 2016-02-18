@@ -1,6 +1,6 @@
 # mobile-mayhem
 
-
+![meh logo](dist/assets/logo2.png?raw=true "Now with not-as-bad-as-before-but-stil-bad-and-not-the-good-bad logo")
 
 ### Build Directions
 
@@ -70,7 +70,7 @@ Tap the animals, it's like petting but a biiit more agressive
 
 Themes:
 - Whack-a-Gopher
-  - I had this idea that maybe the holes belong to the moles, and the gophers stole them. So the moles have hired you to ~~kill~~ ~~destroy~~ relocate the gophers 
+  - I had this idea that maybe the holes belong to the moles, and the gophers stole them. So the moles have hired you to ~~kill~~ ~~destroy~~ relocate the gophers
 
 ### Memory Tile Game
 Themes:
@@ -122,7 +122,7 @@ This game is funny because it's all random, you really can't choose much.
 Swipe in a direction to get the ball in hole (like most sports).
 
 ### Shaker
-Shake the phone as much as possible. 
+Shake the phone as much as possible.
 
 You may be thinking .
 > "Won't my group of familiar humans look ~~stuuu~~ dumb shaking their phones around?"

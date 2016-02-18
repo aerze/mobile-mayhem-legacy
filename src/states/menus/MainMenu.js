@@ -7,7 +7,7 @@ MainMenu.prototype = {
 
     preload: function () {
         this.stage.backgroundColor = '#b1d256';
-        this.load.image('logo', 'assets/logo.png');
+        this.load.image('logo', 'assets/logo2.png');
     },
 
     create: function () {

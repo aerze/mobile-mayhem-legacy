@@ -39,7 +39,7 @@ Preload.prototype = {
         this.load.bitmapFont('coolvetica', 'assets/fonts/coolvetica_regular_32_0.png', 'assets/fonts/coolvetica_regular_32.xml');
 
         // Load the rest of the assets
-        this.load.image('logo', 'assets/logo.png');
+        this.load.image('logo', 'assets/logo2.png');
         this.load.spritesheet('blueButton', 'assets/menu/blue_button_123.png', 580, 123);
         this.load.image('button', 'assets/menu/button_background.png');
 
