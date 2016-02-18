@@ -31,7 +31,7 @@ SinglePlayer.prototype = {
 
         this.button_SpriteShoot = this.add.button(halfWidth, halfHeight + 50 + (128), 'Sprite Shoot', 64, this.mainGroup);
         this.button_SpriteShoot.customEvents.animComplete.add(function () {
-            // this.state.start('Minis_SpriteShoot');
+            this.state.start('Mini_SpriteShoot');
         }, this);
         this.game.add.tween(this.button_SpriteShoot).from( { y: -200,  }, 800, Phaser.Easing.Elastic.Out, true);
 
