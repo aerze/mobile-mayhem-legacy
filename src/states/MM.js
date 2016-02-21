@@ -4,6 +4,7 @@ var MM = {
   Preload: require('./Preload'),
   Menu_MainMenu: require('./menus/MainMenu'),
   Menu_SinglePlayer: require('./menus/SinglePlayer'),
+  Menu_Multiplayer: require('./menus/Multiplayer'),
   Mini_ClickTap: require('./minis/ClickTap'),
   Mini_SpriteShoot: require('./minis/SpriteShoot')
 };

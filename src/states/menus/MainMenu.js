@@ -29,7 +29,7 @@ MainMenu.prototype = {
 
         this.button_Multiplayer = this.add.button(halfWidth, halfHeight + 50, 'Multiplayer', 64, this.mainGroup);
         this.button_Multiplayer.customEvents.animComplete.add(function () {
-            // this.state.start('Menu_Multiplayer');
+             this.state.start('Menu_Multiplayer');
         }, this);
 
 
