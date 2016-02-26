@@ -17,7 +17,9 @@ Phaser.Plugin.ClientPlugin.prototype.constructor = Phaser.Plugin.ClientPlugin;
 
 
 function doPost(endPoint, data, callback) {
+    console.log(data);
     fetch('/' + endPoint, {
+        credentials: 'same-origin',
         method: 'post',
         headers: {
             'Accept': 'application/json',
@@ -60,6 +62,7 @@ function doGet(endPoint, filter, callback) {
     }
 
     fetch('/' + endPoint, {
+        credentials: 'same-origin',
         method: 'get',
         headers: {
             'Accept': 'application/json',
@@ -87,6 +90,10 @@ function doGet(endPoint, filter, callback) {
         });
 }
 
+function setPeer(callback){
+
+}
+
 var Client = function () {
 
     return {
@@ -107,9 +114,14 @@ var Client = function () {
         getPeerId: function (callback) {
             var peer = new Peer({key: 'aeepyvq614zsq0k9'});
             tempStorage.peer = peer;
-            doPost('setPeer', {
-                peerId: peer.id
-            }, callback);
+
+            peer.on('open', function(id) {
+                console.log('My peer ID is: ' + id);
+                doPost('setPeer', {
+                    peerId: peer.id
+                }, callback);
+            });
+
 
         },
 

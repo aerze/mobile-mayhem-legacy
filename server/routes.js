@@ -60,9 +60,12 @@ exports.getRooms = function(req, res) {
 
 
 exports.setPeerId = function(req, res) {
+    console.log(req.signedCookies);
+    console.log("peer", req.body);
     if (req.signedCookies !== undefined && req.signedCookies.user !== undefined)
         if(usersOnline[req.signedCookies.user]) {
             var user = usersOnline[req.signedCookies.user];
+            console.log("peer", req.body.peerId);
             if(req.body.peerId) user.peerId=req.body.peerId;
             else return res.status(400).send("No Data");
         }
