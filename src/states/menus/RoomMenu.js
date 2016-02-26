@@ -1,13 +1,14 @@
 
-var Multiplayer = function () {
+var RoomMenu = function () {
 
 };
 
-Multiplayer.prototype = {
+RoomMenu.prototype = {
 
     preload: function () {
         this.stage.backgroundColor = '#b1d256';
         this.load.image('logo', 'assets/logo2.png');
+        this.game.client.getRooms()
     },
 
     create: function () {
@@ -71,9 +72,6 @@ Multiplayer.prototype = {
     }
 };
 
-function fieldsValid(email, pass) {
-    return email && pass;
-}
 
 
-module.exports = Multiplayer;
+module.exports = RoomMenu;

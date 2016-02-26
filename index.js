@@ -17,6 +17,7 @@ app.use(express.static(path.join(__dirname, 'dist')));
 var routes = require('./server/routes');
 
 app.post('/login', routes.login);
+app.post('/setPeer', routes.setPeerId);
 
 
 app.listen(8080, function() {

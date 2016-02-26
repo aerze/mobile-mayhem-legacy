@@ -1,6 +1,7 @@
 
 var db = require('./db');
 var usersOnline = {};
+var roomsOnline = {};
 
 
 function processLogin(err, user) {
@@ -9,7 +10,7 @@ function processLogin(err, user) {
         return this.res.sendStatus(401);
     }
 
-    //this.res.cookie('username', user.username, { signed: true, path:'/' });
+    this.res.cookie('username', user.username, { signed: true, path:'/' });
     usersOnline[user.username]=user;
     var _user = JSON.parse(JSON.stringify(user));
     delete _user.password;
@@ -28,5 +29,44 @@ exports.login = function(req, res) {
 
 };
 
+
+exports.logout = function(req, res) {
+    if (req.signedCookies !== undefined && req.signedCookies.user !== undefined)
+    //TODO: room cleanup
+    if(usersOnline[req.signedCookies.user]) delete usersOnline[req.signedCookies.user];
+    res.json({"msg":"goodbye"});
+};
+
+
+exports.createRoom = function(req, res) {
+    if (req.signedCookies !== undefined && req.signedCookies.user !== undefined)
+    if(usersOnline[req.signedCookies.user]) {
+        var user =  usersOnline[req.signedCookies.user];
+
+    }
+
+    res.json({"msg":"roomCreated"});
+};
+
+exports.getRooms = function(req, res) {
+    if (req.signedCookies !== undefined && req.signedCookies.user !== undefined)
+        if(usersOnline[req.signedCookies.user]) {
+            var user =  usersOnline[req.signedCookies.user];
+
+        }
+
+    res.json({"msg":"goodbye"});
+};
+
+
+exports.setPeerId = function(req, res) {
+    if (req.signedCookies !== undefined && req.signedCookies.user !== undefined)
+        if(usersOnline[req.signedCookies.user]) {
+            var user = usersOnline[req.signedCookies.user];
+            if(req.body.peerId) user.peerId=req.body.peerId;
+            else return res.status(400).send("No Data");
+        }
+    res.json({"msg":"peerSet"});
+};
 
 
