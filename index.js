@@ -4,18 +4,19 @@
 var express     = require('express'),
     path        = require('path'),
     morgan      = require('morgan'),
-    bodyParser = require('body-parser');
+    bodyParser = require('body-parser'),
+    cookieParser = require('cookie-parser');
 
 var app = express();
 
 app.use(bodyParser.json());
+app.use(cookieParser('S3Cre7*)0dE'));
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'dist')));
 
-app.post('/login', function (req, res) {
-    console.log(req.body)
-    res.json({"res":"hi"});
-});
+var routes = require('./server/routes');
+
+app.post('/login', routes.login);
 
 
 app.listen(8080, function() {

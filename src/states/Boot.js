@@ -28,6 +28,7 @@ Boot.prototype = {
     // this.game.net = this.game.plugins.add(Phaser.Plugin.NetworkPlugin);
     // this.game.Textbox = this.game.plugins.add(Phaser.Plugin.Textbox);
     this.game.Button = this.game.plugins.add(Phaser.Plugin.ButtonPlugin);
+    this.game.Client = this.game.plugins.add(Phaser.Plugin.ClientPlugin);
     },
 
     preload: function () {

@@ -17,3 +17,4 @@ window.onload = function () {
 // Import Plugins
 // Plugins attach themselves so don't need to be assigned
 require('./plugins/buttonPlugin');
+require('./plugins/clientPlugin');
