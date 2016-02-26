@@ -100,11 +100,11 @@ var Client = function () {
                 if (err) return callback(err,user);
                 tempStorage.user = user;
                 this.getPeerId(callback);
-            } );
+            }.bind(this) );
 
         },
 
-        getPeerId: function (user, callback) {
+        getPeerId: function (callback) {
             var peer = new Peer({key: 'aeepyvq614zsq0k9'});
             tempStorage.peer = peer;
             doPost('setPeer', {
