@@ -1,1 +1,35 @@
-{"maxId":2,"user_store":{"1":{"username":"user1","password":"de28085df73c2502831c9c03993147b3","id":1,"saved_at":"2016-02-26T08:52:18.813Z"},"2":{"username":"hal.mayne@gmail.com","password":"89fff215d2cfd52680a88502b08e0ba2","id":2,"saved_at":"2016-02-26T08:55:52.336Z"}}}
+{
+  "maxId": 5,
+  "user_store": {
+    "1": {
+      "username": "user1",
+      "password": "de28085df73c2502831c9c03993147b3",
+      "id": 1,
+      "saved_at": "2016-02-26T08:52:18.813Z"
+    },
+    "2": {
+      "username": "hal.mayne@gmail.com",
+      "password": "89fff215d2cfd52680a88502b08e0ba2",
+      "id": 2,
+      "saved_at": "2016-02-26T08:55:52.336Z"
+    },
+    "3": {
+      "username": "tam@taco.net",
+      "password": "dda11a645a093a459d03677c6bbd5d5b",
+      "id": 3,
+      "saved_at": "2016-02-27T01:48:40.518Z"
+    },
+    "4": {
+      "username": "boo",
+      "password": "25cc2fc672496950aacf4eeb91b229e6",
+      "id": 4,
+      "saved_at": "2016-02-27T06:01:11.848Z"
+    },
+    "5": {
+      "username": "qwer",
+      "password": "73d10af4ff54c08097554632f7681110",
+      "id": 5,
+      "saved_at": "2016-02-27T06:26:02.749Z"
+    }
+  }
+}

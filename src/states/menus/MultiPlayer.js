@@ -33,9 +33,9 @@ Multiplayer.prototype = {
         pass.placeholder = 'password';
         gameDiv.appendChild(pass);
 
-
-        this.button_Back = this.add.button(halfWidth, this.game.height - 300, 'Login', 48, this.mainGroup);
-        this.button_Back.customEvents.animComplete.add(function () {
+        var self=this;
+        this.button_Login = this.add.button(halfWidth, this.game.height - 300, 'Login', 48, this.mainGroup);
+        this.button_Login.customEvents.animComplete.add(function () {
 
             if(fieldsValid(email.value, pass.value) ) {
 
@@ -48,7 +48,7 @@ Multiplayer.prototype = {
                     else {
                         email.remove();
                         pass.remove();
-                        game.state.start('Menu_MainMenu');
+                        self.game.state.start('Menu_RoomMenu');
                     }
 
                 })
@@ -58,7 +58,7 @@ Multiplayer.prototype = {
 
 
         }, this);
-        this.game.add.tween(this.button_Back).from( { y: -400,  }, 800, Phaser.Easing.Elastic.Out, true);
+        this.game.add.tween(this.button_Login).from( { y: -400,  }, 800, Phaser.Easing.Elastic.Out, true);
 
         this.button_Back = this.add.button(halfWidth, this.game.height - 100, 'Back', 48, this.mainGroup);
         this.button_Back.customEvents.animComplete.add(function () {

@@ -55,12 +55,12 @@ MainMenu.prototype = {
             }, this);
 
             // this.game.add.tween(this.button_QuitGame).to( { alpha:1 }, 800, Phaser.Easing.Quadratic.In, true, 200);
-            this.game.add.tween(this.button_QuitGame).from( { y: -200,  }, 950, Phaser.Easing.Elastic.Out, true);
+            this.game.add.tween(this.button_QuitGame).from( { y: -200  }, 950, Phaser.Easing.Elastic.Out, true);
         // }
 
-        this.game.add.tween(this.button_Multiplayer).from( { y: -200,  }, 800, Phaser.Easing.Elastic.Out, true);
-        this.game.add.tween(this.button_SinglePlayer).from( { y: -200,  }, 900, Phaser.Easing.Elastic.Out, true);
-        this.game.add.tween(this.button_Settings).from( { y: -200,   }, 850, Phaser.Easing.Elastic.Out, true);
+        this.game.add.tween(this.button_Multiplayer).from( { y: -200  }, 800, Phaser.Easing.Elastic.Out, true);
+        this.game.add.tween(this.button_SinglePlayer).from( { y: -200  }, 900, Phaser.Easing.Elastic.Out, true);
+        this.game.add.tween(this.button_Settings).from( { y: -200   }, 850, Phaser.Easing.Elastic.Out, true);
 
     }
 };

@@ -18,6 +18,9 @@ var routes = require('./server/routes');
 
 app.post('/login', routes.login);
 app.post('/setPeer', routes.setPeerId);
+app.post('/createRoom', routes.createRoom);
+app.post('/getRooms', routes.getRooms);
+app.post('/joinRoom', routes.joinRoom);
 
 
 app.listen(8080, function() {

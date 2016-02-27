@@ -2,6 +2,8 @@
 
 var permanentStorage = window.localStorage;
 var tempStorage = window.sessionStorage;
+var peer;
+var conns=[];
 
 
 
@@ -90,7 +92,14 @@ function doGet(endPoint, filter, callback) {
         });
 }
 
-function setPeer(callback){
+function handleConnection(conn){
+
+    console.log('connection',conn);
+    conns.push(conn);
+    conn.on('data', function(data) {
+        console.log('Received', data);
+
+    });
 
 }
 
@@ -112,7 +121,7 @@ var Client = function () {
         },
 
         getPeerId: function (callback) {
-            var peer = new Peer({key: 'aeepyvq614zsq0k9'});
+            peer = new Peer({key: 'aeepyvq614zsq0k9'});
             tempStorage.peer = peer;
 
             peer.on('open', function(id) {
@@ -122,12 +131,41 @@ var Client = function () {
                 }, callback);
             });
 
+            peer.on('connection', handleConnection);
 
         },
 
+        createRoom: function (callback) {
+            doPost('createRoom',{}, callback);
+        },
+
         getRooms: function (callback) {
-            doGet('getRooms','', callback);
+            doPost('getRooms',{}, callback);
+        },
+
+        joinRoom: function (room, callback) {
+            if(!peer) callback('not connected');
+
+
+
+            for (var i in room.peers) {
+
+                var conn = peer.connect(room.peers[i].peerId);
+                conn.on('open', function() {
+                    conns.push(conn);
+                    // Receive messages
+                    conn.on('data', function(data) {
+                        console.log('Received', data);
+                    });
+
+                    // Send messages
+                    conn.send('Hello!');
+                });
+            }
+            doPost('joinRoom',{"roomId":room.id}, callback);
         }
+
+
 
 
 
