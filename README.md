@@ -128,3 +128,68 @@ You may be thinking .
 > "Won't my group of familiar humans look ~~stuuu~~ dumb shaking their phones around?"
 
 > Yes.
+
+
+
+## Multiplayer Method Wishlist
+#### Game will be Peer2Peer with Pseudoleader
+
+- Join room by keypad
+- Auto generated room id (length 5)
+
+#### Wait room
+- state > Wait room
+- set leader
+- peer ping
+- peer status
+- chat?
+- peer icon
+
+
+ Pseudocode
+```javascript
+// enter waiting room
+// animate icons rolling in
+// user icon gets to be larger than rest
+
+// set global game settings
+// display ping
+
+// ready/start button note: no unready
+if (majority) { 
+  startCountdown();
+  start.state('Game_board');
+}
+
+// boredom-killing tactics
+if (click) {
+  grow the size of player icon
+  this could possibly have effects in the game itself
+}
+```
+
+#### Game Board
+- state > Game Board
+
+
+ Pseudocode
+```javascript
+// on enter game board
+// animate icons rolling in
+
+// randomly select next game
+// send start timer command
+// send start game command
+
+// ready/start button 
+if (majority) { 
+  startCountdown();
+  start.state('Game_board');
+}
+
+// boredom-killing tactics
+if (click) {
+  grow the size of player icon
+  this could possibly have effects in the game itself
+}
+```
