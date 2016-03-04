@@ -35,4 +35,8 @@ node_modules
 # webpack js builds
 dist/js
 
+# Editor files
 .idea
+
+# Environment file
+.env

@@ -1,6 +1,8 @@
 'use strict';
 /* jshint node:true */
 
+require('dotenv').load();
+
 var express     = require('express'),
     path        = require('path'),
     morgan      = require('morgan'),
@@ -10,7 +12,7 @@ var express     = require('express'),
 var app = express();
 
 app.use(bodyParser.json());
-app.use(cookieParser('S3Cre7*)0dE'));
+app.use(cookieParser(process.env.COOKIESECRET));
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'dist')));
 
@@ -23,6 +25,6 @@ app.post('/getRooms', routes.getRooms);
 app.post('/joinRoom', routes.joinRoom);
 
 
-app.listen(8080, function() {
-    console.log('Server started on port ' + 8080);
+app.listen(process.env.PORT, process.env.IP, function() {
+
 });
