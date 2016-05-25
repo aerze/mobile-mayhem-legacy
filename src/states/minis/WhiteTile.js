@@ -7,6 +7,7 @@ WhiteTile.prototype = {
   preload: function () {},
   init: function () {
     console.log('WhiteTile: init');
+    this.inPlay = true;
 
     this.split = 4;
     this.rows = 40;
@@ -88,8 +89,21 @@ WhiteTile.prototype = {
 
   },
 
+  deactivateTiles: function () {
+    var tiles = this.tiles;
+
+    var disableInput = function (child) {
+      child.inputEnabled = false;
+    };
+
+    tiles.forEach(disableInput, this);
+
+  },
+
   gameOver: function () {
     this.constSpeed = 0;
+    this.inPlay = false;
+    this.deactivateTiles();
     console.log('game over');
     var enter = this.game.add
       .tween(this.endDisplay)
@@ -148,27 +162,26 @@ WhiteTile.prototype = {
   update: function () {
     var nextTileId = this.nextTileId;
     var nextRow = this.rows - nextTileId + 1;
-    var boardEdge = this.tiles.y + this.tileHeight;
+    var bottomEdge = this.tiles.y + this.tileHeight;
+    var topEdge = this.tiles.y - (this.rows * this.tileHeight);
     var dangerZone = nextRow * this.tileHeight
     var width = this.world.width,
       height = this.world.height,
       halfWidth = width/ 2,
       halfHeight = height/ 2;
 
-
-    if (boardEdge > dangerZone) {
+    if (!this.inPlay) return;
+    console.log(topEdge);
+    if (bottomEdge >= dangerZone) {
       if (this.pushForce !== 0.5) this.pushForce = 0.5;
     } else {
       if (this.pushForce !== 1) this.pushForce = 1;
     }
-    // var tile = this.tiles
-    //   .filter(function (child) {return child.id === nextTile;})
-    //   .list[0];
 
-    // if (this.tiles.y > tileHeight * tiles completed -1)
-    //   gameOver('too latte');
-    // else
-    //
+    if (bottomEdge - this.tileHeight >= dangerZone) {
+      this.gameOver();
+    }
+
     this.moveBoard();
   },
 
