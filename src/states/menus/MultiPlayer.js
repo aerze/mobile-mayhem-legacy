@@ -1,9 +1,9 @@
 
-var SinglePlayer = function () {
+var MultiPlayer = function () {
 
 };
 
-SinglePlayer.prototype = {
+MultiPlayer.prototype = {
 
     preload: function () {
         this.stage.backgroundColor = '#b1d256';
@@ -36,12 +36,6 @@ SinglePlayer.prototype = {
         this.game.add.tween(this.button_SpriteShoot).from( { y: -200,  }, 800, Phaser.Easing.Elastic.Out, true);
 
 
-        this.button_WhiteTile = this.add.button(halfWidth, halfHeight + 50 + (128 * 2), 'White Tile', 64, this.mainGroup);
-        this.button_WhiteTile.customEvents.animComplete.add(function () {
-            this.state.start('Mini_WhiteTile');
-        }, this);
-        this.game.add.tween(this.button_WhiteTile).from( { y: -200,  }, 800, Phaser.Easing.Elastic.Out, true);
-
 
         this.button_Back = this.add.button(halfWidth, this.game.height - 100, 'Back', 48, this.mainGroup);
         this.button_Back.customEvents.animComplete.add(function () {
@@ -52,4 +46,4 @@ SinglePlayer.prototype = {
     }
 };
 
-module.exports = SinglePlayer;
+module.exports = MultiPlayer;

@@ -5,7 +5,7 @@ var MM = require('./states/MM');
 window.onload = function () {
   var game = new Phaser.Game(
     740, 1200, Phaser.AUTO, 'gameContainer');
-  window.game = game;
+  window.game = game; // TODO Remove in production
 
   for (key in MM) {
     game.state.add(key, MM[key]);

@@ -23,6 +23,7 @@
   "dependencies": {
     "express": "^4.13.4",
     "morgan": "^1.6.1",
+    "peer": "^0.2.8",
     "webpack": "^1.12.13"
   }
 }
